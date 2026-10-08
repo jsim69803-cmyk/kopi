@@ -1,3 +1,4 @@
+# node 클래스 정의
 class Node:
     def __init__(self):
         self.data = None
