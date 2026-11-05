@@ -24,6 +24,14 @@ def dequeue():
     print_q[front] = None
     return temp
 
+def peek():
+    global front
+    if is_queue_empty():
+        return print("큐가 비어 있습니다! Peek 불가.")
+    else:
+        temp = print_q[front + 1]
+        return temp
+
 def is_queue_empty():
     global front, rear
     if front == rear:
@@ -47,19 +55,14 @@ def print_queue():
     print("현재 rear:" + str(rear))
     print("===============")
 
-
 init_queue(5)
 enqueue("커피")
 enqueue("우유")
 enqueue("주스")
 enqueue("물")
 enqueue("콜라")
-enqueue("사이다")
+print("================ peek() 함수 호출 전 ================")
+print(peek())
+print("================ peek() 함수 호출 후 ================")
+print(peek())
 print_queue()
-
-
-dequeue()
-print_queue()
-foo = dequeue()
-print(foo)
-print(dequeue())
